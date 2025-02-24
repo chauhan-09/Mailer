@@ -1,10 +1,35 @@
 const email = document.querySelector('#email');
 const message = document.querySelector('#message');
+const subject = document.querySelector('#subject');
 const btn = document.querySelector('.btn');
 const form = document.querySelector('.form');
 
-btn.addEventListener('click', () => {
-   console.log(email.value);
-   console.log(message.value);
+form.addEventListener('submit', async (event) => {
+   
+   event.preventDefault();
+   try{     
+      const obj = {
+         to:email.value,
+         sub:subject.value,
+         msg:message.value
+      }
+       
+      const response = await fetch('http://localhost:3000/submit-form', {
+         method: 'POST',
+         headers: { "Content-Type": "application/json" }, 
+         body: JSON.stringify(obj)
+      });
+
+      const result = await response.json();
+      console.log(result);
+   }
+   catch(err)
+   {
+      console.log(err);
+   }
+   
 })
+
+
+
 

@@ -2,7 +2,13 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT || 5500;
+const PORT = process.env.PORT || 3000;
+
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+app.use(cors());
+app.use(bodyParser.json()); 
 
 app.get('/', (req,res) => {
     res.send('Home Page!');
@@ -10,6 +16,13 @@ app.get('/', (req,res) => {
 
 app.listen(PORT, ()=> {
     console.log('Server is running');
+})
+
+app.post('/submit-form', (req,res) => {
+   
+    const data = req.body;
+    res.send(data);
+    sendmail(data.to,data.sub,data.msg);
 })
 
 const transporter = nodemailer.createTransport({
@@ -32,7 +45,7 @@ function sendmail(to,sub,msg){
     console.log('email sent');
 }
 
-sendmail("nsc7574@gmail.com","Congratulations","You have Reached 2000 elo in chess");
+// sendmail(obj.to,obj.sub,obj.msg); 
 
 
 

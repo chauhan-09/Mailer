@@ -39,9 +39,15 @@ body {
   text-align: left; /* Align labels and textarea to the left */
 }
 
+.subject {
+  margin-bottom: 1.5rem;
+  text-align: left; /* Align labels and textarea to the left */
+}
+
 /* Label styling */
 .email-id label,
-.msg label {
+.msg label,
+.subject label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
@@ -51,6 +57,7 @@ body {
 
 /* Input and textarea styling */
 .email-id input,
+.subject input,
 .msg textarea {
   width: 100%;
   padding: 0.75rem;
