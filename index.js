@@ -13,7 +13,7 @@ form.addEventListener('submit', async (event) => {
          sub:subject.value,
          msg:message.value
       }
-       
+           
       const response = await fetch('http://localhost:3000/submit-form', {
          method: 'POST',
          headers: { "Content-Type": "application/json" }, 
@@ -21,6 +21,8 @@ form.addEventListener('submit', async (event) => {
       });
 
       const result = await response.json();
+      window.alert('Email Sent!');
+      form.reset();
       console.log(result);
    }
    catch(err)

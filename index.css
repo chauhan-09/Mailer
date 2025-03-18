@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: grey;
+  background: url('image.avif');
   display: flex;
   justify-content: center; /* Center the form horizontally */
   align-items: center; /* Center the form vertically */
@@ -11,7 +11,7 @@ body {
 
 /* Form container */
 .my-form {
-  background-color: white;
+  background-color: rgba(238, 230, 230, 0.927);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

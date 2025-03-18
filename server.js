@@ -45,7 +45,7 @@ function sendmail(to,sub,msg){
     console.log('email sent');
 }
 
-// sendmail(obj.to,obj.sub,obj.msg); 
+//sendmail(obj.to,obj.sub,obj.msg); 
 
 
 
